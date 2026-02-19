@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  vpn-bot:
+    build: .
+    container_name: telegram-vpn-bot
+    environment:
+      - BOT_TOKEN=8512123339:AAEOrT2yPiH1OmScwKByngVkOrnqroXaYco
+      - ADMIN_IDS=8131712128
+      - PANEL_URL=${PANEL_URL}
+      - PANEL_USERNAME=${PANEL_USERNAME}
+      - PANEL_PASSWORD=${PANEL_PASSWORD}
+      - PANEL_INBOUND_ID=${PANEL_INBOUND_ID}
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
